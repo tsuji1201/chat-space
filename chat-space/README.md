@@ -18,8 +18,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
-|image|string||
+|body|text|null: true|
+|image|text|null: true|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 
