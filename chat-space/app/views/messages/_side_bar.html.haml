@@ -1,0 +1,17 @@
+.side-bar
+  .header
+    .header__box
+      .header__box__user-name
+        tsuji
+      .header__box__icon
+        .header__box__icon__btn
+          = link_to "#", class: "header__box__icon__btn__new" do
+            = icon('far', 'far fa-edit')
+          = link_to "#", class: "header__box__icon__btn__edit" do
+            = icon('fas', 'fas fa-cog')
+  .group
+    .block 
+      %p.block__name
+        techcamp
+      %p.block__message
+        まだメッセージがありません
