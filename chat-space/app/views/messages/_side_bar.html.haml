@@ -2,12 +2,12 @@
   .header
     .header__box
       .header__box__user-name
-        tsuji
+        = current_user.name
       .header__box__icon
         .header__box__icon__btn
           = link_to "#", class: "header__box__icon__btn__new" do
             = icon('far', 'far fa-edit')
-          = link_to "#", class: "header__box__icon__btn__edit" do
+          = link_to edit_user_path(current_user), class: "header__box__icon__btn__edit" do
             = icon('fas', 'fas fa-cog')
   .group
     .block 
