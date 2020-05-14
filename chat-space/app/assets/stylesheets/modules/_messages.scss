@@ -103,6 +103,7 @@ $white: #ffffff;
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding: 46px 40px;
+    overflow: scroll;
     &__box {
       margin-bottom: 46px;
       &__info {
@@ -134,7 +135,6 @@ $white: #ffffff;
       &__box {
         height: 50px;
         width: 100%;
-        position: relative;
         &__text {
           height: 50px;
           width: 100%;
@@ -144,7 +144,7 @@ $white: #ffffff;
           font-size: 30px;
           position: absolute;
           top: 5px;
-          right: 5px;
+          right: 115px;
           input {
             display: none;
           }
@@ -165,4 +165,9 @@ $white: #ffffff;
       }      
     }
   } 
+}
+
+.new_message {
+  display: flex;
+  position: relative;
 }
