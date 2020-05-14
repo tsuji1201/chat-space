@@ -2,25 +2,22 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__name
-        techcamp
+        = @group.name
       .main-header__left-box__member
-        Member : tsuji
-    =link_to '#', class: "main-header__right-box__btn" do
+        members:
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group), class: "main-header__right-box__btn" do
       Edit
   .message-list
-    .message-list__box
-      .message-list__box__info
-        .message-list__box__info__name
-          tsuji
-        .message-list__box__info__date
-          2020/01/01(Wed) 10:00:00
-      .message-list__box__text
-        おはよう
+    = render @messages
+    
   .message-form
-    %form.message-form__new
+    .message-form__new
       .message-form__new__box
-        %input{type: "text", class: "message-form__new__box__text", placeholder: "type a message"}
-        %label{class: "message-form__new__box__image"}
-          =icon('fas', 'image')
-          %input{type: "file", class: "message-form__new__box__file"}
-      %input{type: "submit", class: "message-form__new__btn"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :body, class: 'message-form__new__box__text', placeholder: "type a message"
+          = f.label :image, class: 'message-form__new__box__image' do
+            =icon('fas', 'image')
+            = f.file_field :image, class: 'message-form__new__box__file'
+          = f.submit 'Send', class: 'message-form__new__btn'  
